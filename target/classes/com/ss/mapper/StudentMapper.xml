@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ss.mapper.StudentMapper">
+ 	 <!-- 自动生成,请修改 report_send.xml -->
+    <resultMap id="BaseResultMap"  type="com.ss.pojo.Student">
+        <result column="name" property="name" jdbcType="VARCHAR" javaType="String"/>
+    </resultMap>
+ 
+ 
+  <insert id="insert" parameterType="com.ss.pojo.Student">
+    INSERT INTO student (`name`) VALUES (#{name})
+  </insert>
+ 
+ 
+ 
+  <select id="searchForwardOnly" parameterType="com.ss.pojo.Student" 
+  	resultMap="BaseResultMap"  resultSetType="FORWARD_ONLY"
+  	fetchSize="10">
+  	select * from student
+  </select>
+</mapper>

@@ -1,0 +1,27 @@
+server:
+ port: 8080
+ servlet:
+  context-path: /
+spring:
+ messages:
+  encoding: UTF-8
+ http:
+  encoding: 
+   force: true
+   charset: UTF-8
+   enabled: true
+   uri-encoding: UTF-8
+ mvc:
+  view:
+   prefix: /WEB-INF/views/
+   suffix: .jsp 
+ datasource:
+  url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+  username: root
+  password: root
+  driver-class-name: com.mysql.jdbc.Driver
+ jpa:
+  hibernate:
+mybatis:
+ mapper-locations: classpath:com/ss/mapper/*.xml
+ type-aliases-package: com.ss.pojo
